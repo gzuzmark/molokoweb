@@ -1,7 +1,36 @@
 import React from "react"
+import styled from "styled-components"
+import Navlinks from "./Navlinks"
+
+const MyMobileNavbar = styled.nav`
+  width: 50vw;
+  background: ${props => props.theme.colors.base};
+  box-shadow: -10px 10px 5px ${props => props.theme.colors.accent};
+  align-self: flex-end;
+
+  .nav-links {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 60vh;
+    list-style: none;
+  }
+
+  .link {
+    color: white;
+    font-size: 2.5vh;
+    text-decoration: none;
+  }
+`
 
 const MobileNavbar = () => {
-  return <div>mobile</div>
+  return (
+    <MyMobileNavbar>
+      <Navlinks />
+    </MyMobileNavbar>
+  )
 }
 
 export default MobileNavbar

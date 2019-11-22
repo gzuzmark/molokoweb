@@ -1,41 +1,25 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import DesktopNavbar from "./DesktopNavbar"
 import MobileNavbar from "./MobileNavbar"
+import styled from "styled-components"
 
-export const Navbar = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-    <div>
-      <DesktopNavbar />
+const MyNavBar = styled.nav`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+`
+
+export const Navbar = ({ siteTitle }) => {
+  const [open, setOpen] = useState(false)
+  return (
+    <MyNavBar>
+      <DesktopNavbar open={open} setOpen={setOpen} />
       <MobileNavbar />
-    </div>
-  </header>
-)
+    </MyNavBar>
+  )
+}
 
 Navbar.propTypes = {
   siteTitle: PropTypes.string,
