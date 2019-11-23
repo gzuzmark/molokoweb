@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import { Menu } from "./components"
 import { Navbar } from "./components/navigation/Navbar"
+import WindowDimensionsProvider from "./components/WindowDimensionsProvider"
 import { ThemeProvider } from "styled-components"
 import { theme } from "./theme"
 
@@ -24,14 +25,19 @@ export const AppLayout = ({ children, pageContext }) => (
         <ThemeProvider theme={theme}>
           <>
             <Navbar siteTitle={data.site.siteMetadata.title} />
-            <Menu />
+            {/* <WindowDimensionsProvider>
+              <Navbar siteTitle={data.site.siteMetadata.title} />
+            </WindowDimensionsProvider> */}
+            {/* <Menu /> */}
             <div
-              style={{
-                margin: `0 auto`,
-                maxWidth: 960,
-                padding: `0px 1.0875rem 1.45rem`,
-                paddingTop: 0,
-              }}
+              className="container"
+              // style={{
+              //   // margin: `0 auto`,
+              //   maxWidth: 960,
+              //   padding: `0px 1.0875rem 1.45rem`,
+              //   paddingTop: `1rem`,
+              //   background: `#011627`,
+              // }}
             >
               <main>{children}</main>
               <footer>

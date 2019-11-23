@@ -1,9 +1,11 @@
 export const theme = {
   colors: {
-    base: "#2a2e35", // medium gray
-    accent: "#010101",
-    secondary: "#12181b", // Black
-    tertiary: "#b2becd", // Light Gray
+    base: "#000C1D", // medium gray
+    baseBorder: "#102a44",
+    accent: "#8BADC1",
+
+    secondary: "#011627", // Black
+    tertiary: "#8BADC1", // Light Gray
     highlight: "#00ff7b", // Light green
   },
   sizes: {

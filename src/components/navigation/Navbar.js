@@ -1,9 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import DesktopNavbar from "./DesktopNavbar"
 import MobileNavbar from "./MobileNavbar"
 import styled from "styled-components"
+import ResponsiveLayout from "../ResponsiveLayout"
+import { Burger } from "./MenuBurger"
 
 const MyNavBar = styled.nav`
   display: flex;
@@ -11,12 +13,34 @@ const MyNavBar = styled.nav`
   justify-content: flex-start;
 `
 
+const windowDims = () => ({
+  height: window.innerHeight,
+  width: window.innerWidth,
+})
+
 export const Navbar = ({ siteTitle }) => {
   const [open, setOpen] = useState(false)
+  useEffect(() => {
+    const handleResize = () => {
+      if (open && windowDims().width > 768) {
+        setOpen(false)
+      }
+    }
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [open])
   return (
     <MyNavBar>
+      <Burger open={open} setOpen={setOpen} />
       <DesktopNavbar open={open} setOpen={setOpen} />
-      <MobileNavbar />
+      <MobileNavbar open={open} setOpen={setOpen} />
+      {/* <ResponsiveLayout
+        breakPoint={768}
+        renderDesktop={() => <DesktopNavbar open={open} setOpen={setOpen} />}
+        renderMobile={() => <MobileNavbar open={open} setOpen={setOpen} />}
+      /> */}
     </MyNavBar>
   )
 }

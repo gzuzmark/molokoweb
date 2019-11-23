@@ -5,6 +5,6 @@
  */
 
 // You can delete this file if you're not using it
-import "./src/app.css"
+import "./src/app.scss"
 
 require("typeface-poppins")

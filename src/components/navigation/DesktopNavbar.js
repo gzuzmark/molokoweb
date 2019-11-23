@@ -5,19 +5,30 @@ import Navlinks from "./Navlinks"
 const MyDesktopNavBar = styled.nav`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 
-  background: ${props => props.theme.colors.base};
+  background: var(--background);
   color: white;
-  height: 15vh;
+  height: 5rem;
 
-  box-shadow: 0 10px 5px ${props => props.theme.colors.accent};
+  box-shadow: var(--nav-shadow);
 
-  .logo {
-    font-size: 7vh;
+  /* .logo {
+    font-size: 2rem;
     font-weight: bold;
     text-shadow: 3px 3px 3px ${props => props.theme.colors.accent};
+  } */
+
+  @media screen and (max-width: 768px) {        
+      justify-content: space-evenly;
+      
+  }
+
+  .logo {
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;    
   }
 
   .nav-links {
@@ -26,25 +37,29 @@ const MyDesktopNavBar = styled.nav`
     justify-content: space-evenly;
     align-items: center;
 
-    width: 35vw;
+    width: 30rem;
     list-style: none;
+    margin-bottom: 0px;
 
     @media screen and (max-width: 768px) {
-      display: none;
+      display: none;      
+      justify-content: space-evenly;
+      
     }
   }
 
   .link {
     color: white;
-    font-size: 2.5vh;
+    font-size: 1rem;
     text-decoration: none;
+    margin-bottom: 0px;
   }
 `
 
 const MovileNavButton = styled.button`
   background: transparent;
-  height: 6vh;
-  width: 6vh;
+  height: 2rem;
+  width: 2rem;
   border: none;
   display: none;
 
@@ -53,66 +68,11 @@ const MovileNavButton = styled.button`
   }
 `
 
-const StyledBurger = styled.button`
-  position: absolute;
-  top: 5%;
-  left: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
-
-  &:focus {
-    outline: none;
-  }
-
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background: ${({ open }) => (open ? "#0D0C1D" : "#EFFFFA")};
-    border-radius: 10px;
-    transition: all 0.3s linear;
-    position: relative;
-    transform-origin: 1px;
-
-    :first-child {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
-    }
-
-    :nth-child(2) {
-      opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
-    }
-
-    :nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
-    }
-  }
-`
-
-const Burger = ({ open, setOpen }) => {
-  return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
-    </StyledBurger>
-  )
-}
-
 const DesktopNavbar = ({ open, setOpen }) => {
   return (
     <MyDesktopNavBar>
-      <Burger open={open} setOpen={setOpen} />
-      <div className="logo">Logo</div>
+      <span className="logo">🎙️ Moloko Podcast</span>
       <Navlinks />
-      <MovileNavButton>Button</MovileNavButton>
     </MyDesktopNavBar>
   )
 }

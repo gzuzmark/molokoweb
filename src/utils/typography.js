@@ -2,7 +2,7 @@ import Typography from "typography"
 
 const typography = new Typography({
   baseFontSize: "18px",
-  baseLineHeight: 1.45,
+  baseLineHeight: 0,
   headerFontFamily: ["Playfair Display", "serif"],
   bodyFontFamily: ["Luckiest Guy", "cursive"],
 })
