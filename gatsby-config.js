@@ -44,6 +44,7 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -58,6 +59,5 @@ module.exports = {
         pathToConfigModule: "src/utils/typography.js",
       },
     },
-    `gatsby-plugin-sass`,
   ],
 }
