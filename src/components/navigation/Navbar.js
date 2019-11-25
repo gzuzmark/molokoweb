@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import DesktopNavbar from "./DesktopNavbar"
 import MobileNavbar from "./MobileNavbar"
 import styled from "styled-components"
-import ResponsiveLayout from "../ResponsiveLayout"
-import { Burger } from "./MenuBurger"
 
 const MyNavBar = styled.nav`
   display: flex;
@@ -33,7 +30,6 @@ export const Navbar = ({ siteTitle }) => {
   }, [open])
   return (
     <MyNavBar>
-      <Burger open={open} setOpen={setOpen} />
       <DesktopNavbar open={open} setOpen={setOpen} />
       <MobileNavbar open={open} setOpen={setOpen} />
       {/* <ResponsiveLayout

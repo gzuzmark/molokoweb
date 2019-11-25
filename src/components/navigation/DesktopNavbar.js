@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Navlinks from "./Navlinks"
+import { Burger } from "./MenuBurger"
 
 const MyDesktopNavBar = styled.nav`
   display: flex;
@@ -21,8 +22,7 @@ const MyDesktopNavBar = styled.nav`
   } */
 
   @media screen and (max-width: 768px) {        
-      justify-content: space-evenly;
-      
+      justify-content: space-evenly;      
   }
 
   .logo {
@@ -71,6 +71,7 @@ const MovileNavButton = styled.button`
 const DesktopNavbar = ({ open, setOpen }) => {
   return (
     <MyDesktopNavBar>
+      <Burger open={open} setOpen={setOpen} />
       <span className="logo">🎙️ Moloko Podcast</span>
       <Navlinks />
     </MyDesktopNavBar>

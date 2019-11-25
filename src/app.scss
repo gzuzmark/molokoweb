@@ -8,6 +8,17 @@ $colors: (
   pink: #ff4088,
 );
 
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
 @mixin default-theme {
   --background: var(--gray6);
   --text-color: var(--gray2);
