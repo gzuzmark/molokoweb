@@ -56,23 +56,13 @@ const MyDesktopNavBar = styled.nav`
   }
 `
 
-const MovileNavButton = styled.button`
-  background: transparent;
-  height: 2rem;
-  width: 2rem;
-  border: none;
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-  }
-`
-
 const DesktopNavbar = ({ open, setOpen }) => {
   return (
     <MyDesktopNavBar>
       <Burger open={open} setOpen={setOpen} />
-      <span className="logo">🎙️ Moloko Podcast</span>
+      <span className="logo" role="img" aria-label="logo">
+        🎙️{"Moloko Podcast"}
+      </span>
       <Navlinks />
     </MyDesktopNavBar>
   )

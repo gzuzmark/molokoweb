@@ -293,7 +293,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: var(--text-color);
   /* font-family: georgia, serif; */
   font-family: "Poppins", sans-serif;
   font-weight: normal;

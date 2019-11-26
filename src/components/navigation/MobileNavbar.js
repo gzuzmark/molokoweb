@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Navlinks from "./Navlinks"
-import { Burger } from "./MenuBurger"
 
 const MyMobileNavbar = styled.nav`
   width: 450px;
