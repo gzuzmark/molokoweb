@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby-MDX + Netlify-CMS Starter`,
-    description: `Starter for Gatsby-MDX + Netlify CMS`,
-    author: `@renvrant`,
+    title: `Moloko website`,
+    description: `Moloko podcast `,
+    author: `@gzuzmark @renvrant`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -45,6 +45,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
     `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
