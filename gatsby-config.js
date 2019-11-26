@@ -1,3 +1,7 @@
+"use strict"
+
+const siteConfig = require("./config.js")
+
 module.exports = {
   siteMetadata: {
     title: `Moloko website`,
@@ -58,6 +62,18 @@ module.exports = {
       resolve: "gatsby-plugin-typography",
       options: {
         pathToConfigModule: "src/utils/typography.js",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: siteConfig.title,
+        short_name: siteConfig.title,
+        start_url: "/",
+        background_color: "#000c1d",
+        theme_color: "#001122",
+        display: "standalone",
+        icon: "src/images/icon.png",
       },
     },
   ],
